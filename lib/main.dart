@@ -14,10 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor :Color.fromARGB(255, 63, 182, 123),
-        
-      ),
+      home: HomePage()
     );
   }
 }
@@ -29,6 +26,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
+      backgroundColor : const Color.fromARGB(255, 63, 182, 123),
       body: Center(
         child: Container(
           height :300,
