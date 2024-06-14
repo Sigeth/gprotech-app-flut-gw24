@@ -7,7 +7,8 @@ class BeginAnalysePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      
+        appBar: AppBar(
         title: Text("Analyse de ${title.toLowerCase()}"),
       ),
       body: GestureDetector(
@@ -22,5 +23,4 @@ class BeginAnalysePage extends StatelessWidget {
         )
     );
   }
-
 }
