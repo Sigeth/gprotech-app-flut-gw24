@@ -36,7 +36,7 @@ class _AnalysePageState extends State<Runanalyse> {
         padding: const EdgeInsets.all(16.0),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            primary: const Color.fromARGB(255, 200, 30, 18), // Couleur du bouton
+            backgroundColor: const Color.fromARGB(255, 200, 30, 18), // Couleur du bouton
           ),
           onPressed: _isAnalysisComplete ? () {
             Navigator.pop(context); // Ferme la page ou effectue une action

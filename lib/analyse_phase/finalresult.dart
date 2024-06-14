@@ -35,28 +35,11 @@ class _FinalResultState extends State<FinalResult> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.lightGreen[100],
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'Analyse en cours...',
-              style: TextStyle(fontSize: 24),
+      body: const Center(
+        child: Text(
+              '29% de dechets indésirable',
+              style: const TextStyle(fontSize: 20)
             ),
-            const SizedBox(height: 20),
-            Text(
-              '${(_progress * 100).toInt()}% de dechets indésirable',
-              style: const TextStyle(fontSize: 20),
-            ),
-            const SizedBox(height: 20),
-            LinearProgressIndicator(
-              value: _progress,
-              backgroundColor: Colors.grey[200],
-              color: Colors.green,
-              minHeight: 10,
-            ),
-          ],
-        ),
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(16.0),
