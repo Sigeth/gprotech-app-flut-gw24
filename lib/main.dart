@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import "bluetooth.dart";
+import 'package:gprotech_app_flut_gw24/analyse_phase/runanalyse.dart';
+import 'package:gprotech_app_flut_gw24/analyse_phase/finalresult.dart';
+//import 'package:flutter/typedechets.dart';
+//import "bluetooth.dart";
 
 void main() {
   runApp(MyApp());
@@ -12,10 +15,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BluetoothConnectView()
+      home: RunAnalyse()
     );
   }
 }
+
+
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
