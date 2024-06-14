@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'analyse_phase/begin.dart'; // Importez votre fichier being.dart
 
 void main() {
@@ -7,14 +6,17 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
    return MaterialApp(
+     debugShowCheckedModeBanner: false,
       title: 'Type de Déchets',
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: Typedechets(),
+      home: const Typedechets(),
     );
   }
 }
@@ -26,6 +28,8 @@ class Typedechets extends StatelessWidget {
     'Verre',
     'Carton',
   ];
+
+  const Typedechets({super.key});
 
   @override
   Widget build(BuildContext context) {
