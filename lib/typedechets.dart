@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const Typedechets(),
+      home: Typedechets(),
     );
   }
 }
@@ -29,7 +29,7 @@ class Typedechets extends StatelessWidget {
     'Carton',
   ];
 
-  const Typedechets({super.key});
+  Typedechets({super.key});
 
   @override
   Widget build(BuildContext context) {
