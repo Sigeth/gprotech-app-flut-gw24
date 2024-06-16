@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gprotech_app_flut_gw24/analyse_phase/finalresult.dart';
+import 'package:gprotech_app_flut_gw24/analyse_phase/runanalyse.dart';
+/*import 'package:gprotech_app_flut_gw24/analyse_phase/finalresult.dart';*/
+import 'package:gprotech_app_flut_gw24/typedechets.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,7 +10,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
@@ -21,7 +23,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF81C784), // Light green background color
+      backgroundColor: Color.fromARGB(255, 116, 222, 122), // Light green background color
       body: Center(
         child: Container(
           height: 300,
