@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'typedechets.dart';
 
 
@@ -22,16 +21,16 @@ class BluetoothConnectView extends StatelessWidget {
                 )
             );
           },
-          child: Center(
+          child: const Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                SvgPicture.asset(
-                  "assets/bluetooth.svg",
-                  height: 500,
-                  width: 500,
+                Icon(
+                  Icons.bluetooth,
+                  size: 120,
+                  color: Colors.grey,
                 ),
-                const Text(
+                Text(
                   'Connectez vous au bluetooth !',
                   style: TextStyle(
                     fontSize: 24,
