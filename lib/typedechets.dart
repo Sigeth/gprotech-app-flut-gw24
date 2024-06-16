@@ -17,12 +17,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: Typedechets(),
+      home: TypeDechets(),
     );
   }
 }
 
-class Typedechets extends StatelessWidget {
+class TypeDechets extends StatelessWidget {
   final List<String> dechets = [
     'Plastique',
     'Papier',
@@ -30,11 +30,7 @@ class Typedechets extends StatelessWidget {
     'Carton',
   ];
 
-<<<<<<< HEAD
-   //Typedechets({super.key});
-=======
-  Typedechets({super.key});
->>>>>>> 5140cbcf8bf9bf7ad80c4d9d4054852397947056
+  TypeDechets({super.key});
 
   @override
   Widget build(BuildContext context) {
