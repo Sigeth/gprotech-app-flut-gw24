@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'analyse_phase/begin.dart'; // Importez votre fichier begin.dart
+import 'analyse_phase/begin.dart';
 
 void main() {
   runApp(const MyApp());

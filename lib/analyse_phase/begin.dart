@@ -24,7 +24,7 @@ class BeginAnalysePage extends StatelessWidget {
             );
           },
           child: const Center(
-              child: Text("Commencer l'analyse", style: TextStyle(fontSize: 24),),
+              child: Text("Commencer l'analyse", style: TextStyle(fontSize: 24)),
           )
         )
     );
