@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'finalresult.dart';
 
-class Runanalyse extends StatefulWidget {
+class RunAnalyse extends StatefulWidget {
   @override
   _AnalysePageState createState() => _AnalysePageState();
 }
 
-class _AnalysePageState extends State<Runanalyse> {
+class _AnalysePageState extends State<RunAnalyse> {
   bool _isAnalysisComplete = false;
 
   @override
@@ -39,7 +40,13 @@ class _AnalysePageState extends State<Runanalyse> {
             backgroundColor: const Color.fromARGB(255, 200, 30, 18), // Couleur du bouton
           ),
           onPressed: _isAnalysisComplete ? () {
-            Navigator.pop(context); // Ferme la page ou effectue une action
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    settings: const RouteSettings(name: "FinalResult"),
+                    builder: (ctx) => const FinalResult()
+                )
+            );
           } : null, // Désactive le bouton si l'analyse n'est pas terminée
           child: const Text(
             'Terminer',

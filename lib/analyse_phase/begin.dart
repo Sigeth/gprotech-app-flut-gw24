@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'runanalyse.dart';
 
 class BeginAnalysePage extends StatelessWidget {
   const BeginAnalysePage({super.key, required this.title});
@@ -9,15 +10,21 @@ class BeginAnalysePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
         title: Text("Analyse de ${title.toLowerCase()}"),
+        backgroundColor: Colors.green,
       ),
       body: GestureDetector(
           behavior: HitTestBehavior.opaque,
           onTap: () {
-            ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('Gesture Detected!')));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    settings: const RouteSettings(name: "RunAnalyse"),
+                    builder: (ctx) => RunAnalyse()
+                )
+            );
           },
-          child: Center(
-              child: Text("Commencer l'analyse"),
+          child: const Center(
+              child: Text("Commencer l'analyse", style: TextStyle(fontSize: 24),),
           )
         )
     );

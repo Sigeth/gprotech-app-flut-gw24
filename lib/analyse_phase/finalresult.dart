@@ -9,26 +9,10 @@ class FinalResult extends StatefulWidget {
 }
 
 class _FinalResultState extends State<FinalResult> {
-  double _progress = 0.0;
-  bool _isAnalysisComplete = false;
 
   @override
   void initState() {
     super.initState();
-    _startAnalysis();
-  }
-
-  void _startAnalysis() async {
-    // Simule une progression de l'analyse
-    while (_progress < 1.0) {
-      await Future.delayed(const Duration(seconds: 1));
-      setState(() {
-        _progress += 0.1;
-      });
-    }
-    setState(() {
-      _isAnalysisComplete = true;
-    });
   }
 
   @override
@@ -37,7 +21,7 @@ class _FinalResultState extends State<FinalResult> {
       backgroundColor: Colors.lightGreen[100],
       body: const Center(
         child: Text(
-              '29% de dechets indésirable',
+              '29% de déchets indésirables',
               style: const TextStyle(fontSize: 20)
             ),
       ),
@@ -47,9 +31,9 @@ class _FinalResultState extends State<FinalResult> {
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.red, // Couleur du bouton
           ),
-          onPressed: _isAnalysisComplete ? () {
-            Navigator.popUntil(context, ModalRoute.withName('/'));
-          } : null, // Désactive le bouton si l'analyse n'est pas terminée
+          onPressed: () {
+            Navigator.popUntil(context, ModalRoute.withName("TypeDechets"));
+          },
           child: const Text(
             'Terminer l\'analyse',
             style: TextStyle(fontSize: 18),
