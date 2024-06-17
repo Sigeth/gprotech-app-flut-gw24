@@ -6,59 +6,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget oldToDelete = Container(
-      height: 300,
-      width: 300,
-      decoration: BoxDecoration(
-        color: Color.fromARGB(255, 198, 21, 18), // Red color for container
-        borderRadius: BorderRadius.circular(20), // Rounded corners
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.2),
-            spreadRadius: 5,
-            blurRadius: 7,
-            offset: const Offset(0, 3), // Shadow position
-          ),
-        ],
-      ),
-      child: const Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Image(image: AssetImage("assets/isen-logo.png")),
-          Text(
-            'G-Protech',
-            style: TextStyle(
-              fontSize: 28,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-              shadows: [
-                Shadow(
-                  blurRadius: 10.0,
-                  color: Colors.black45,
-                  offset: Offset(2.0, 2.0),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 20),
-          Text(
-            'Veolia',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-              shadows: [
-                Shadow(
-                  blurRadius: 10.0,
-                  color: Colors.black45,
-                  offset: Offset(2.0, 2.0),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
+    double unitHeightValue = MediaQuery.of(context).size.height * 0.01;
 
     return Scaffold(
         backgroundColor: Color.fromARGB(255, 116, 222, 122), // Light green background color
@@ -73,16 +21,15 @@ class HomePage extends StatelessWidget {
                 )
             );
           },
-          child: const Center(
+          child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Image(image: AssetImage("assets/isen-logo.png")),
-                Image(image: AssetImage("assets/gw24-logo.png")),
-                Text(
+                SizedBox(height: unitHeightValue*4),
+                const Text(
                   'G-Protech',
                   style: TextStyle(
-                    fontSize: 28,
+                    fontSize: 36,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     shadows: [
@@ -94,27 +41,15 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
-                Text(
-                  'Veolia',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    shadows: [
-                      Shadow(
-                        blurRadius: 10.0,
-                        color: Colors.black45,
-                        offset: Offset(2.0, 2.0),
-                      ),
-                    ],
-                  ),
-                ),
+                Image(image: const AssetImage("assets/gprotech-logo.png"), height: unitHeightValue*25),
+                SizedBox(height: unitHeightValue*8),
+                Image(image: const AssetImage("assets/isen-logo.png"), height: unitHeightValue*18),
+                Image(image: const AssetImage("assets/veolia-logo.png"), height: unitHeightValue*18),
               ],
             ),
           ),
-        )
-
+        ),
+      bottomNavigationBar: Image(image: const AssetImage("assets/gw24-logo.png"), height: unitHeightValue*12)
     );
   }
 }

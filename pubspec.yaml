@@ -64,6 +64,8 @@ flutter:
   assets:
     - assets/isen-logo.png
     - assets/gw24-logo.png
+    - assets/gprotech-logo.png
+    - assets/veolia-logo.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

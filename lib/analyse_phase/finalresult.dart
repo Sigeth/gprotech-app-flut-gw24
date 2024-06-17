@@ -101,7 +101,10 @@ class _FinalResultState extends State<FinalResult> {
           },
           child: const Text(
             'Terminer l\'analyse',
-            style: TextStyle(fontSize: 18),
+            style: TextStyle(
+                fontSize: 18,
+                color: Color.fromARGB(100, 0, 172, 20)
+            ),
           ),
         ),
       ),

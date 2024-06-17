@@ -49,7 +49,10 @@ class _AnalysePageState extends State<RunAnalyse> {
           } : null, // Désactive le bouton si l'analyse n'est pas terminée
           child: const Text(
             'Terminer',
-            style: TextStyle(fontSize: 18),
+            style: TextStyle(
+                fontSize: 18,
+                color: Color.fromARGB(100, 0, 172, 20)
+            )
           ),
         ),
       ),
