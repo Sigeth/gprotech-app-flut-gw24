@@ -65,8 +65,21 @@ class _FinalResultState extends State<FinalResult> {
                 latestUpdate.payload.message);
             final prediction = json.decode(payloadMessage)["prediction"];
             if (prediction != null) {
-              return Center(
-                  child: Text('${prediction.floor()}% de déchets indésirables'));
+              return Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                      Text('${prediction.floor()}%',
+                        style: const TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.red
+                      )),
+                      const Text("de déchets indésirables",
+                        style: TextStyle(
+                        fontSize: 16
+                      ))
+                    ]
+              );
             }
             return mqttUnready;
           },
@@ -76,7 +89,6 @@ class _FinalResultState extends State<FinalResult> {
     }
 
     return Scaffold(
-      backgroundColor: Colors.lightGreen[100],
       body: analysisResultDisplayer,
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(16.0),

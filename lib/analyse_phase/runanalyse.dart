@@ -26,7 +26,6 @@ class _AnalysePageState extends State<RunAnalyse> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightGreen[100],
       body: const Center(
         child: Text(
           'Analyse en cours...',
