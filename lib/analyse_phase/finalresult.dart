@@ -27,7 +27,7 @@ class _FinalResultState extends State<FinalResult> {
     await client.connect('casque01').onError((e, stack) {
       debugPrint("Error connecting to MQTT : $e");
     }); // Replace with a unique client ID
-    client.subscribe("python/topic", MqttQos.atMostOnce);
+    client.subscribe("gprotech/casque1/taux", MqttQos.atLeastOnce);
 
     client.onConnected = () {
       debugPrint('MQTT connected');
@@ -57,39 +57,39 @@ class _FinalResultState extends State<FinalResult> {
           stream: client.updates, // Receive MQTT updates
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
+              debugPrint("No MQTT data");
               return mqttUnready;
             }
             final updates = snapshot.data!;
+            debugPrint(updates.last.payload.toString());
             final latestUpdate = updates.last.payload as MqttPublishMessage;
             final payloadMessage = MqttPublishPayload.bytesToStringAsString(
                 latestUpdate.payload.message);
-            final prediction = json.decode(payloadMessage)["prediction"];
-            if (prediction != null) {
-              return Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                      Text('${prediction.floor()}%',
-                        style: const TextStyle(
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.red
-                      )),
-                      const Text("de déchets indésirables",
-                        style: TextStyle(
-                        fontSize: 16
-                      ))
-                    ]
-              );
-            }
-            return mqttUnready;
+            final double prediction = double.parse(payloadMessage);
+            return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                    Text('${prediction.floor()}%',
+                      style: const TextStyle(
+                      fontSize: 64,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.red
+                    )),
+                    const Text("de déchets indésirables",
+                      style: TextStyle(
+                      fontSize: 16
+                    ))
+                  ]
+            );
           },
         );
     } catch (e) {
+      debugPrint("Error : $e");
       analysisResultDisplayer = mqttUnready;
     }
 
     return Scaffold(
-      body: analysisResultDisplayer,
+      body: Center(child: analysisResultDisplayer),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ElevatedButton(
