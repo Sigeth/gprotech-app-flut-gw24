@@ -1,16 +1,11 @@
 # gprotech_app_flut_gw24
-
 Application de contrôle et d'affichage pour la solution de G-ProTech à la GarageWeek2024
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Manuel d'utilisation
+Nous utilisons le framework Flutter pour cette application.<br>
+Flutter est un outil permettant de développer une application pour Android et iOS (entre autres) avec le même code, économisant donc du temps et permettant une meilleure adaptabilité.<br>
+### Prérequis
+- [Flutter](https://docs.flutter.dev/get-started/install)
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/) ou [Android Studio](https://developer.android.com/studio)
+- Le plugin Flutter sur l'IDE choisi
+### Lancer l'application
+Pour lancer l'application, vous devez suivre ce tutoriel : [Tutoriel Flutter pour lancer l'application (EN)](https://docs.flutter.dev/get-started/test-drive?tab=androidstudio)

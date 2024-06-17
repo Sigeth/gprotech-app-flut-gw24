@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
               children: <Widget>[
                 SizedBox(height: unitHeightValue*4),
                 const Text(
-                  'G-Protech',
+                  'G-ProTech',
                   style: TextStyle(
                     fontSize: 36,
                     fontWeight: FontWeight.bold,
